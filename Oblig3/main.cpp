@@ -29,11 +29,15 @@ int main(){
 
 	cout << "The eigenvalues of H are: " << endl;
 	cout << eig_sym(H) << endl;
+	Col<double> eigen_values = eig_sym(H);
+	cout << eigen_values << endl;
+
+
 
 	ofstream myfile; 
 	myfile.open("eigenvalues.txt");
 	for (int i = 0; i  < N; i++){
-		
+		myfile << eigen_values(i) << endl;
 	}
 	
 	return 0;
